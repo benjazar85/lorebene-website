@@ -1,21 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>L'OR ÉBÈNE - Musique Réunionnaise</title>
+    <title>L'OR ÉBÈNE - Musique & culture à La Réunion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="L'OR ÉBÈNE met en lumière la richesse qui est en chacun de nous par des activités d'art, de musique et de culture à La Réunion.">
     <link href="style.css" rel="stylesheet">
 </head>
-<body>
+<body id="top">
     <header>
         <img src="logo.png" alt="Logo L'OR ÉBÈNE" class="logo">
         <nav>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">L’association</a></li>
-                <li><a href="#">Activités</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#top">Accueil</a></li>
+                <li><a href="#association">L’association</a></li>
+                <li><a href="#activites">Activités</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li>
                     <select onchange="changeLang(this.value)">
                         <option value="fr">🇫🇷 FR</option>
@@ -26,15 +26,94 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <section>
-            <h1>Bienvenue sur le site de L’OR ÉBÈNE</h1>
-            <p>Transmission de la culture réunionnaise, musique maloya, ateliers & valeurs ancestrales en harmonie avec la nature.</p>
+        <!-- Accueil -->
+        <section id="accueil">
+            <h1>Bienvenue sur le site de <span>L’OR ÉBÈNE</span></h1>
+            <p>
+                Transmission de la culture réunionnaise, musique maloya, ateliers & valeurs ancestrales
+                en harmonie avec la nature. L’OR ÉBÈNE met en lumière la richesse qui est en chacun de nous
+                par l’art, la musique et le partage.
+            </p>
+        </section>
+
+        <!-- L’association -->
+        <section id="association">
+            <h2>L’association</h2>
+            <p>
+                L’OR ÉBÈNE est une association basée à La Réunion. Elle a pour vocation de créer des espaces
+                où la musique, la voix, le corps et l’écoute deviennent des outils de rencontre entre les personnes,
+                les générations et les cultures.
+            </p>
+            <p>
+                Nous travaillons à partir du patrimoine musical réunionnais (maloya, séga, chants traditionnels),
+                enrichi par les percussions du monde et des chants issus de différentes traditions.
+                Chaque projet est pensé comme une expérience sensible, accessible et respectueuse des rythmes de chacun.
+            </p>
+            <p>
+                L’OR ÉBÈNE intervient notamment auprès :
+            </p>
+            <ul>
+                <li>des enfants (crèches, écoles, structures petite enfance),</li>
+                <li>des adolescents et adultes dans des cadres éducatifs ou culturels,</li>
+                <li>des personnes âgées et publics en situation de fragilité (EHPAD, foyers, structures médico-sociales).</li>
+            </ul>
+        </section>
+
+        <!-- Activités -->
+        <section id="activites">
+            <h2>Nos activités</h2>
+            <p>
+                Nous proposons des actions sur mesure, en fonction des publics et des lieux. Voici quelques exemples
+                d’axes de travail que nous développons au fil de l’année :
+            </p>
+            <ul>
+                <li><strong>Ateliers musicaux & percussions</strong> : découverte des instruments, jeux rythmiques,
+                    accompagnement de chants, improvisation guidée.</li>
+                <li><strong>Patrimoine réunionnais</strong> : transmission de chants, histoires et rythmes du maloya
+                    et d’autres musiques traditionnelles de l’île.</li>
+                <li><strong>Culture & santé</strong> : interventions en EHPAD et structures médico-sociales
+                    pour stimuler la mémoire, la présence à soi et la joie partagée.</li>
+                <li><strong>Moments de bien-être sonore</strong> : temps d’écoute, voyages sonores, séances intimistes
+                    mêlant voix, guitare, percussions et instruments du monde.</li>
+                <li><strong>Événements & collaborations</strong> : participations à des festivals, journées à thème,
+                    projets artistiques avec d’autres structures et associations.</li>
+            </ul>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                Pour toute demande d’information, de devis ou de partenariat, vous pouvez nous écrire à :
+            </p>
+            <p>
+                <strong>Email :</strong>
+                <a href="mailto:contact@lorebene.re">contact@lorebene.re</a>
+            </p>
+            <p>
+                Merci de préciser dans votre message :
+            </p>
+            <ul>
+                <li>le type de structure (crèche, école, EHPAD, association, événement, etc.),</li>
+                <li>le public concerné,</li>
+                <li>les périodes ou dates souhaitées,</li>
+                <li>vos besoins ou intentions (atelier, résidence, concert, projet à co-construire).</li>
+            </ul>
+            <p>
+                Vous pouvez également suivre notre actualité sur Facebook :
+                <a href="https://www.facebook.com/asso.lorebene/" target="_blank" rel="noopener">
+                    L’OR ÉBÈNE sur Facebook
+                </a>
+            </p>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2025 L'OR ÉBÈNE - Tous droits réservés.</p>
     </footer>
+
     <script>
         function changeLang(lang) {
             alert("La version multilingue arrive bientôt !");
