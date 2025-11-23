@@ -2,25 +2,265 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>L'OR ÉBÈNE - Musique & culture à La Réunion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="L'OR ÉBÈNE met en lumière la richesse qui est en chacun de nous par des activités d'art, de musique et de culture à La Réunion.">
-    <link href="style.css" rel="stylesheet">
+    <title>L'OR ÉBÈNE - Musique & Culture à La Réunion</title>
+    <meta name="description" content="Association L'OR ÉBÈNE : Transmission du Maloya, ateliers culturels et musique thérapie à La Réunion. Valorisons la richesse en chacun de nous.">
+    
+    <meta property="og:title" content="L'OR ÉBÈNE - Musique & Culture">
+    <meta property="og:description" content="Transmission, Maloya et partage à La Réunion.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://www.facebook.com/share/1ADzDR7HUi/">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABLES & COULEURS (Thème Or & Ébène) --- */
+        :root {
+            --color-ebene: #1a1a1a;       /* Noir bois sombre */
+            --color-ebene-light: #2c2c2c; /* Gris foncé */
+            --color-or: #d4af37;          /* Doré élégant */
+            --color-or-hover: #b59020;
+            --color-text: #333;
+            --color-bg: #f9f9f9;
+            --font-main: 'Poppins', sans-serif;
+            --font-title: 'Playfair Display', serif;
+        }
+
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-family: var(--font-title); color: var(--color-ebene); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background-color: var(--color-ebene);
+            color: #fff;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo { height: 50px; border-radius: 50%; border: 2px solid var(--color-or); }
+        .site-name { font-size: 1.5rem; font-weight: bold; color: var(--color-or); }
+
+        nav ul { display: flex; gap: 20px; align-items: center; }
+        nav a { color: #fff; font-weight: 500; font-size: 0.95rem; }
+        nav a:hover { color: var(--color-or); }
+
+        /* Bouton Menu Mobile */
+        .menu-toggle { display: none; font-size: 1.5rem; color: var(--color-or); cursor: pointer; }
+
+        /* Selecteur de langue stylisé */
+        select {
+            background: transparent;
+            color: white;
+            border: 1px solid var(--color-or);
+            padding: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        select option { color: black; }
+
+        /* --- HERO SECTION (Bannière) --- */
+        #accueil {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x900/?reunion-island,music') no-repeat center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            margin-top: 60px; /* Compensation header fixe */
+        }
+
+        #accueil h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        #accueil span { color: var(--color-or); }
+
+        #accueil p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .btn-cta {
+            background-color: var(--color-or);
+            color: var(--color-ebene);
+            padding: 12px 30px;
+            font-weight: bold;
+            border-radius: 30px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        .btn-cta:hover { background-color: var(--color-or-hover); transform: translateY(-2px); }
+
+        /* --- SECTIONS GÉNÉRALES --- */
+        section { padding: 80px 10%; }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--color-or);
+            margin: 15px auto 0;
+        }
+
+        /* --- L'ASSOCIATION --- */
+        #association { background-color: white; }
+        .asso-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        .asso-text { flex: 1; min-width: 300px; }
+        .asso-img-placeholder {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 2px solid var(--color-or);
+            color: #888;
+        }
+
+        /* --- ACTIVITÉS (Grid) --- */
+        #activites { background-color: var(--color-ebene-light); color: white; }
+        #activites .section-title { color: white; }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .activity-card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--color-or);
+            transition: 0.3s;
+        }
+        .activity-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }
+        .activity-card h3 { color: var(--color-or); margin-bottom: 15px; font-size: 1.3rem; }
+        .activity-card i { font-size: 2rem; color: var(--color-or); margin-bottom: 15px; }
+
+        /* --- CONTACT & FACEBOOK --- */
+        #contact { background-color: white; text-align: center; }
+        .contact-box {
+            background: #f4f4f4;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .contact-email {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-ebene);
+            margin: 20px 0;
+            display: block;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #1877F2; /* Bleu FB */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .social-btn:hover { background-color: #145dbf; }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--color-ebene);
+            color: #888;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            #accueil h1 { font-size: 2.5rem; }
+            .menu-toggle { display: block; }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: var(--color-ebene);
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+            }
+            nav ul.active { display: flex; }
+            .asso-content { flex-direction: column; }
+        }
+    </style>
 </head>
 <body id="top">
+
     <header>
-        <img src="logo.png" alt="Logo L'OR ÉBÈNE" class="logo">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo L'OR ÉBÈNE" class="logo" onerror="this.style.display='none'"> 
+            <span class="site-name">L'OR ÉBÈNE</span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
         <nav>
-            <ul>
-                <li><a href="#top">Accueil</a></li>
-                <li><a href="#association">L’association</a></li>
-                <li><a href="#activites">Activités</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul id="nav-links">
+                <li><a href="#top" onclick="toggleMenu()">Accueil</a></li>
+                <li><a href="#association" onclick="toggleMenu()">L’Association</a></li>
+                <li><a href="#activites" onclick="toggleMenu()">Activités</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
                 <li>
                     <select onchange="changeLang(this.value)">
                         <option value="fr">🇫🇷 FR</option>
+                        <option value="kr">🇷🇪 KREOL</option>
                         <option value="en">🇬🇧 EN</option>
-                        <option value="kr">🇷🇪 KRÉOL</option>
                     </select>
                 </li>
             </ul>
@@ -28,95 +268,113 @@
     </header>
 
     <main>
-        <!-- Accueil -->
         <section id="accueil">
-            <h1>Bienvenue sur le site de <span>L’OR ÉBÈNE</span></h1>
+            <h1>Révélez votre <br><span>Richesse Intérieure</span></h1>
             <p>
-                Transmission de la culture réunionnaise, musique maloya, ateliers & valeurs ancestrales
-                en harmonie avec la nature. L’OR ÉBÈNE met en lumière la richesse qui est en chacun de nous
-                par l’art, la musique et le partage.
+                Transmission de la culture réunionnaise, Maloya, ateliers & valeurs ancestrales.
+                L’OR ÉBÈNE met en lumière l'art, la musique et le partage.
             </p>
+            <a href="#activites" class="btn-cta">Découvrir nos activités</a>
         </section>
 
-        <!-- L’association -->
         <section id="association">
-            <h2>L’association</h2>
-            <p>
-                L’OR ÉBÈNE est une association basée à La Réunion. Elle a pour vocation de créer des espaces
-                où la musique, la voix, le corps et l’écoute deviennent des outils de rencontre entre les personnes,
-                les générations et les cultures.
-            </p>
-            <p>
-                Nous travaillons à partir du patrimoine musical réunionnais (maloya, séga, chants traditionnels),
-                enrichi par les percussions du monde et des chants issus de différentes traditions.
-                Chaque projet est pensé comme une expérience sensible, accessible et respectueuse des rythmes de chacun.
-            </p>
-            <p>
-                L’OR ÉBÈNE intervient notamment auprès :
-            </p>
-            <ul>
-                <li>des enfants (crèches, écoles, structures petite enfance),</li>
-                <li>des adolescents et adultes dans des cadres éducatifs ou culturels,</li>
-                <li>des personnes âgées et publics en situation de fragilité (EHPAD, foyers, structures médico-sociales).</li>
-            </ul>
+            <h2 class="section-title">L’Association</h2>
+            <div class="asso-content">
+                <div class="asso-text">
+                    <p><strong>L’OR ÉBÈNE</strong> est une association basée à La Réunion qui crée des espaces où la musique, la voix et le corps deviennent des outils de rencontre.</p>
+                    <br>
+                    <p>Nous puisons notre inspiration dans le <strong>patrimoine musical réunionnais</strong> (Maloya, Séga), enrichi par les percussions du monde. Chaque projet est une expérience sensible, respectueuse des rythmes de chacun.</p>
+                    <br>
+                    <h3><i class="fas fa-users" style="color:var(--color-or)"></i> Nos Publics</h3>
+                    <ul style="margin-top:10px; margin-left:20px;">
+                        <li>• Enfants (crèches, écoles)</li>
+                        <li>• Adolescents & Adultes</li>
+                        <li>• Seniors & EHPAD (Musicothérapie)</li>
+                    </ul>
+                </div>
+                <div class="asso-img-placeholder">
+                    <span>[Insérer Photo Association Ici]</span>
+                </div>
+            </div>
         </section>
 
-        <!-- Activités -->
         <section id="activites">
-            <h2>Nos activités</h2>
-            <p>
-                Nous proposons des actions sur mesure, en fonction des publics et des lieux. Voici quelques exemples
-                d’axes de travail que nous développons au fil de l’année :
-            </p>
-            <ul>
-                <li><strong>Ateliers musicaux & percussions</strong> : découverte des instruments, jeux rythmiques,
-                    accompagnement de chants, improvisation guidée.</li>
-                <li><strong>Patrimoine réunionnais</strong> : transmission de chants, histoires et rythmes du maloya
-                    et d’autres musiques traditionnelles de l’île.</li>
-                <li><strong>Culture & santé</strong> : interventions en EHPAD et structures médico-sociales
-                    pour stimuler la mémoire, la présence à soi et la joie partagée.</li>
-                <li><strong>Moments de bien-être sonore</strong> : temps d’écoute, voyages sonores, séances intimistes
-                    mêlant voix, guitare, percussions et instruments du monde.</li>
-                <li><strong>Événements & collaborations</strong> : participations à des festivals, journées à thème,
-                    projets artistiques avec d’autres structures et associations.</li>
-            </ul>
+            <h2 class="section-title">Nos Activités</h2>
+            <div class="activities-grid">
+                
+                <article class="activity-card">
+                    <i class="fas fa-drum"></i>
+                    <h3>Ateliers Musicaux</h3>
+                    <p>Découverte des instruments traditionnels (Roulèr, Kayamb), jeux rythmiques et improvisation guidée pour tous les âges.</p>
+                </article>
+
+                <article class="activity-card">
+                    <i class="fas fa-island-tropical"></i> <i class="fas fa-guitar"></i>
+                    <h3>Patrimoine Réunionnais</h3>
+                    <p>Transmission orale des chants ("Fonnkèr"), histoires et rythmes du Maloya. Une immersion dans nos racines.</p>
+                </article>
+
+                <article class="activity-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Culture & Santé</h3>
+                    <p>Interventions en EHPAD pour stimuler la mémoire et la joie par la musique. La culture au service du bien-être.</p>
+                </article>
+
+                <article class="activity-card">
+                    <i class="fas fa-spa"></i>
+                    <h3>Bien-être Sonore</h3>
+                    <p>Voyages sonores intimistes mêlant voix, guitare et percussions du monde pour des moments de pure détente.</p>
+                </article>
+
+                <article class="activity-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Événements</h3>
+                    <p>Participations à des festivals, kabars, et projets artistiques collaboratifs sur toute l'île.</p>
+                </article>
+
+            </div>
         </section>
 
-        <!-- Contact -->
         <section id="contact">
-            <h2>Contact</h2>
-            <p>
-                Pour toute demande d’information, de devis ou de partenariat, vous pouvez nous écrire à :
-            </p>
-            <p>
-                <strong>Email :</strong>
-                <a href="mailto:contact@lorebene.re">contact@lorebene.re</a>
-            </p>
-            <p>
-                Merci de préciser dans votre message :
-            </p>
-            <ul>
-                <li>le type de structure (crèche, école, EHPAD, association, événement, etc.),</li>
-                <li>le public concerné,</li>
-                <li>les périodes ou dates souhaitées,</li>
-                <li>vos besoins ou intentions (atelier, résidence, concert, projet à co-construire).</li>
-            </ul>
-            <p>
-                Vous pouvez également suivre notre actualité sur Facebook :
-                <a href="https://www.facebook.com/asso.lorebene/" target="_blank" rel="noopener">
-                    L’OR ÉBÈNE sur Facebook
+            <h2 class="section-title">Contact & Actu</h2>
+            
+            <div class="contact-box">
+                <p>Pour vos projets (ateliers, résidences, concerts), écrivez-nous :</p>
+                
+                <a href="mailto:contact@lorebene.re" class="contact-email">
+                    <i class="fas fa-envelope"></i> contact@lorebene.re
                 </a>
-            </p>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #ddd;">
+
+                <h3>Suivez notre actualité</h3>
+                <p>Retrouvez nos derniers événements, photos et dates sur notre page Facebook officielle.</p>
+                
+                <a href="https://www.facebook.com/share/1ADzDR7HUi/" target="_blank" rel="noopener" class="social-btn">
+                    <i class="fab fa-facebook-f"></i> Voir sur Facebook
+                </a>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 L'OR ÉBÈNE - Tous droits réservés.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Fait avec <i class="fas fa-heart" style="color:var(--color-or)"></i> à La Réunion</p>
     </footer>
 
     <script>
+        // Script simple pour le menu mobile
+        function toggleMenu() {
+            const nav = document.getElementById('nav-links');
+            nav.classList.toggle('active');
+        }
+
         function changeLang(lang) {
-            alert("La version multilingue arrive bientôt !");
+            if(lang === 'kr') {
+                alert("Bienvenue zot tout ! Version Kréol pou biento.");
+            } else if (lang === 'en') {
+                alert("English version coming soon!");
+            }
         }
     </script>
 </body>
