@@ -476,3 +476,138 @@ footer {
         align-items: center;
     }
 }
+
+/* ===================================
+   PAGE ACTIVITÉS
+   =================================== */
+
+/* Hero activités */
+.hero-activities {
+    height: 50vh;
+    background-image: url('Exploration_Sonore.webp');
+}
+
+.hero-activities h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-activities p {
+    font-size: 1.3rem;
+}
+
+/* Sections d'activités */
+.activities-section {
+    padding: 5rem 0;
+}
+
+.activities-section:nth-child(odd) {
+    background-color: var(--blanc);
+}
+
+.activities-section:nth-child(even) {
+    background-color: var(--beige-naturel);
+}
+
+.patrimoine-section {
+    background: linear-gradient(135deg, rgba(107, 76, 138, 0.05), rgba(64, 181, 173, 0.05));
+}
+
+/* Grille d'activités */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+/* Carte d'activité */
+.activity-card {
+    background-color: var(--blanc);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.activity-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.activity-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.1));
+}
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.activity-card:hover .activity-image img {
+    transform: scale(1.05);
+}
+
+.activity-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-content h3 {
+    color: var(--violet-profond);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--or-lumineux);
+    padding-bottom: 0.5rem;
+}
+
+.activity-content p {
+    color: var(--noir-ebene);
+    line-height: 1.8;
+    flex-grow: 1;
+}
+
+/* Navigation active */
+nav a.active {
+    color: var(--or-lumineux);
+    font-weight: bold;
+}
+
+/* Responsive pour activités */
+@media (max-width: 768px) {
+    .activities-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .activity-image {
+        height: 200px;
+    }
+
+    .hero-activities h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-activities p {
+        font-size: 1.1rem;
+    }
+}
