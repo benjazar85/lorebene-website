@@ -21,7 +21,7 @@
 
 /* Style global */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     line-height: 1.6;
     color: var(--noir-ebene);
     background-color: var(--beige-naturel);
@@ -610,27 +610,4 @@ nav a.active {
     .hero-activities p {
         font-size: 1.1rem;
     }
-}
-
-/* ===== MENU MOBILE ===== */
-@media (max-width: 768px) {
-
-  /* Le bouton burger doit être visible */
-  .menu-toggle {
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  /* Le menu est caché par défaut */
-  nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 12px;
-    padding: 12px 0;
-  }
-
-  /* Quand on ajoute .active => le menu s'affiche */
-  nav ul.active {
-    display: flex;
-  }
 }
