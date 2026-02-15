@@ -18,7 +18,7 @@
                 <h1 class="header-title">L'OR ÉBÈNE</h1>
                 <p class="header-tagline">Accorder les cœurs pour harmoniser un monde meilleur</p>
             </div>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
         </div>
     </header>
 
@@ -29,6 +29,7 @@
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#association">L'Association</a></li>
                 <li><a href="activites.html">Nos Activités</a></li>
+                <li><a href="#expositions">Expositions</a></li>
                 <li><a href="#galerie">Galerie</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -47,7 +48,12 @@
         <div class="container">
             <h2 class="section-title">Qui sommes-nous ?</h2>
             <div class="about-content">
-                <p>L'Or Ébène est une association loi 1901 qui œuvre pour une culture vivante et partagée. En rendant accessible la musique traditionnelle, les arts et le bien-être à tous les publics, notamment ceux éloignés de l'offre culturelle, nous créons des ponts entre les traditions et les générations. Nos racines puisent dans les patrimoines réunionnais pour cultiver le lien social et la transmission.</p>
+                <p>
+                    L'Or Ébène est une association loi 1901 qui œuvre pour une culture vivante et partagée.
+                    En rendant accessible la musique traditionnelle, les arts et le bien-être à tous les publics,
+                    notamment ceux éloignés de l'offre culturelle, nous créons des ponts entre les traditions et les générations.
+                    Nos racines puisent dans les patrimoines réunionnais pour cultiver le lien social et la transmission.
+                </p>
             </div>
         </div>
     </section>
@@ -60,18 +66,53 @@
                 <div class="pillar-card">
                     <div class="pillar-icon">🎵</div>
                     <h3>Arts & Musique</h3>
-                    <p>Nous explorons les traditions musicales réunionnaises, africaines et indiennes à travers des ateliers collectifs et des concerts participatifs. Du roulèr au djembé, de la guitare au nombre, chaque instrument devient un vecteur de partage et d'expression. La musique comme langage universel pour se rencontrer et créer ensemble.</p>
+                    <p>
+                        Nous explorons les traditions musicales réunionnaises, africaines et indiennes à travers des ateliers collectifs
+                        et des concerts participatifs. Du roulèr au djembé, de la guitare au nombre, chaque instrument devient un vecteur
+                        de partage et d'expression. La musique comme langage universel pour se rencontrer et créer ensemble.
+                    </p>
                 </div>
                 <div class="pillar-card">
                     <div class="pillar-icon">🌍</div>
                     <h3>Culture & Patrimoine</h3>
-                    <p>Transmettre pour ne pas oublier, partager pour enrichir. Nous valorisons les mémoires culturelles de La Réunion et d'ailleurs à travers des récits, des ateliers de fabrication d'instruments traditionnels, des expositions. Un voyage dans les racines qui nous constituent et qui tissent notre identité commune.</p>
+                    <p>
+                        Transmettre pour ne pas oublier, partager pour enrichir. Nous valorisons les mémoires culturelles de La Réunion
+                        et d'ailleurs à travers des récits, des ateliers de fabrication d'instruments traditionnels, des expositions.
+                        Un voyage dans les racines qui nous constituent et qui tissent notre identité commune.
+                    </p>
                 </div>
                 <div class="pillar-card">
                     <div class="pillar-icon">🧘</div>
                     <h3>Bien-être</h3>
-                    <p>Par le son, le souffle et le mouvement, nous cultivons l'harmonie intérieure. Nous proposons des voyages musicaux avec des instruments traditionnels et des chants du monde, mêlant musicothérapie, méditation sonore et pratiques corporelles douces. Des espaces pour s'accorder à soi-même et vibrer en résonance avec le groupe.</p>
+                    <p>
+                        Par le son, le souffle et le mouvement, nous cultivons l'harmonie intérieure. Nous proposons des voyages musicaux
+                        avec des instruments traditionnels et des chants du monde, mêlant musicothérapie, méditation sonore et pratiques
+                        corporelles douces. Des espaces pour s'accorder à soi-même et vibrer en résonance avec le groupe.
+                    </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expositions Section (AJOUT) -->
+    <section id="expositions" class="about">
+        <div class="container">
+            <h2 class="section-title">Expositions</h2>
+
+            <!-- ⚠️ Mets ici le NOM EXACT de ton fichier si différent -->
+            <div class="gallery-item" style="margin-bottom: 18px;">
+                <img src="exposition-instruments-lorebene.jpg"
+                     alt="Exposition d'instruments traditionnels africains, indiens et réunionnais - L'OR ÉBÈNE">
+            </div>
+
+            <div class="about-content">
+                <p>
+                    Expositions d'instruments traditionnels, photographies historiques et objets culturels retraçant l'histoire
+                    des musiques africaine, indienne et réunionnaise.
+                </p>
+                <p>
+                    <a href="activites.html" class="btn">Voir toutes nos activités</a>
+                </p>
             </div>
         </div>
     </section>
@@ -124,6 +165,7 @@
                     <ul>
                         <li><a href="#association">L'Association</a></li>
                         <li><a href="activites.html">Nos Activités</a></li>
+                        <li><a href="#expositions">Expositions</a></li>
                         <li><a href="#galerie">Galerie</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -143,19 +185,16 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         function toggleMenu() {
             const menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
-        }
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-  
+            if
+(menu.classList.contains('active')) {
+                        menu.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
